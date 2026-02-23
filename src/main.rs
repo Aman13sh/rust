@@ -35,33 +35,56 @@ to silence the compiler warning about the variable
 being unused.
 */
 
-use std::ops::Index;
+// use std::ops::Index;
 
-const TOUCHDOWN_POINTS: i32 = 6;
+// const TOUCHDOWN_POINTS: i32 = 6;
 
 fn main(){
     
     // variable declaration in rust variable declaration is similar to
     // any statically type language all variables are immutable need mut key word to make a variable mutable.
-    let season : &str = "Summer";
+    // let season : &str = "Summer";
 
-    let mut points_scored = 28;
-    points_scored = 35;
+    // let mut points_scored = 28;
+    // points_scored = 35;
 
-    #[allow(unused_variables)]
-    let event_time = "06:00";
+    // #[allow(unused_variables)]
+    // let event_time = "06:00";
 
-    let event_time = 6;
+    // let event_time = 6;
 
-    println!("{} {} {} {}", season , points_scored , event_time,TOUCHDOWN_POINTS);
-
-
+    // println!("{} {} {} {}", season , points_scored , event_time,TOUCHDOWN_POINTS);
 
 
 
-    let str1 = String::from("Aman");
+
+
+    // let str1 = String::from("Aman");
     
-    println!("{} {}",str1 , &str1[0..2])
+    // println!("{} {}",str1 , &str1[0..2])
+
+    //immutable borrowing
+    // let car:String = String::from("Red");
+    // let ref1: &String= &car;
+    // let ref2: &String = &car;
+    // println!("{ref1} and {ref2} and {}",&car);
+
+
+
+    //mutable borrow
+
+    // let mut car:String = String::from("Red");
+    // let ref1: &mut String = &mut car ;
+    // ref1.push_str("and Silver");
+    // let ref2:&String = &car;
+
+
+    let food: &str = "pizza";
+    let pizz_slice: &str = &food[0..3];
+
+    println!("{}",pizz_slice.len());
+
+
 
 
 }
