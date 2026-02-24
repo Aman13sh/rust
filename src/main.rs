@@ -1,46 +1,42 @@
-/*
-Declare a `season` variable set to a string with
-your favorite season. Provide an explicit type annotation.
-The type of a string is a `&str`. We'll discuss what
-the & symbol means later in the course.
- 
-Declare a `points_scored` variable set to 28.
-Provide an explicit type annotation. The type of
-an integer is `i32`.
- 
-It's time to update the team's score. Declare the
-`points_scored` variable to be mutable. Set its
-new value to 35.
- 
-Declare a `TOUCHDOWN_POINTS` constant at the file
-level set to the value 6.
- 
-Declare a `event_time` variable set to a string of
-"06:00".
- 
-Use variable shadowing to redeclare `event_time` set
-to a integer of 6.
- 
-Use interpolation to print out all of the
-declared variables and constants in a println! call.
-Practice using direct interpolation {value}, sequential
-arguments ( {} ), and numeric arguments ( {0} ).
- 
-Declare a `favorite_beverage` variable set to a string
-of your favorite drink. Use an underscore to silence
-the compiler warning about the variable being unused.
- 
-Remove the underscore. Provide a compiler directive
-to silence the compiler warning about the variable
-being unused.
-*/
 
 // use std::ops::Index;
 
 // const TOUCHDOWN_POINTS: i32 = 6;
 
+// struct Coffee{
+//     price:f64,
+//     name:String,
+//     is_hot:bool
+// }
+
+#[derive(Debug)]
+struct TaylorSwifitSong{
+    title: String,
+    realease_year: u32,
+    duration_secs:u32
+}
+
+impl TaylorSwifitSong{
+    fn display_song_info(self){
+        println!("{}" , self.title);
+        println!("{}",self.realease_year);
+        println!("{}",self.duration_secs);
+    }
+
+}
+
+
+
 fn main(){
-    
+
+
+
+    let song :TaylorSwifitSong = TaylorSwifitSong { title: String::from("Aman"), realease_year: 10, duration_secs: 5 };
+    println!("{:?}",song);
+
+    song.display_song_info();
+
+   
     // variable declaration in rust variable declaration is similar to
     // any statically type language all variables are immutable need mut key word to make a variable mutable.
     // let season : &str = "Summer";
@@ -78,13 +74,32 @@ fn main(){
     // ref1.push_str("and Silver");
     // let ref2:&String = &car;
 
+    //slices
 
-    let food: &str = "pizza";
-    let pizz_slice: &str = &food[0..3];
+    // let food: &str = "pizza";
+    // let pizz_slice: &str = &food[0..3];
 
-    println!("{}",pizz_slice.len());
+    // println!("{}",pizz_slice.len());
 
+    // let name:String =  String::from("Latte");
+    // let cofee:Coffee = make_coffee(name , 5.99 , true);
+
+    // let caramel_macchiato:Coffee = Coffee{
+    //     name :String::from("Aman"),
+    //     ..cofee        
+    // };
+
+    // println!("{} {} {}",cofee.name,cofee.price,cofee.is_hot)
 
 
 
 }
+
+
+// fn make_coffee(name:String , price:f64 , is_hot:bool) -> Coffee{
+//     Coffee{
+//         name:name,
+//         price:price,
+//         is_hot:is_hot
+//     }
+// }
